@@ -153,6 +153,8 @@
   <ItemGroup>
     <ClCompile Include="ELFFormat.cpp" />
     <ClCompile Include="ELFBufferBytes.cpp" />
+    <ClCompile Include="ELFReader.cpp" />
+    <ClCompile Include="Endian_Swap.cpp" />
     <ClCompile Include="Loader.cpp" />
   </ItemGroup>
   <ItemGroup>
