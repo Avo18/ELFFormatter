@@ -21,7 +21,6 @@ template<typename Type> Type swap_16bit(Type src)
 {
 	return cast<Type>(_byteswap_ushort(cast<uint16_t>(src)));
 }
-
 template<typename Type> Type swap_8bit(Type src)
 {
 	return src;

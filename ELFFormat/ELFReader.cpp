@@ -9,7 +9,8 @@ class ELFReader
 {
 private:
 	ELFStructur header;
-	std::vector<ELFSectionHeader> sections = {};
+	std::vector<ELFProgramHeader> programHeader = {};
+	std::vector<ELFSectionHeader> sectionHeaders = {};
 public:
 
 	void readELFHeader(ELFBufferBytes& byteReader)
@@ -19,17 +20,29 @@ public:
 
 	void readELFProgramHeader(ELFBufferBytes& byteReader)
 	{
-		sections.resize(header.e_phnum);
-		Loader::fillSectionHeader(byteReader, sections);
+		programHeader.resize(header.e_phnum);
+		byteReader.setPosition(header.e_phoff);
+		Loader::fillProgramHeader(byteReader, programHeader);
+	}
+
+	void readELFSectionHeader(ELFBufferBytes& byteReader)
+	{
+		sectionHeaders.resize(header.e_shnum);
+		byteReader.setPosition(header.e_shoff);
+		Loader::fillSectionHeader(byteReader, sectionHeaders);
 	}
 
 	ELFStructur* getHeader()
 	{
 		return &header;
 	}
-	std::vector<ELFSectionHeader>* getProgramHeader()
+	std::vector<ELFProgramHeader>* getProgramHeader()
 	{
-		return &sections;
+		return &programHeader;
+	}
+	std::vector<ELFSectionHeader>* getSectionHeader()
+	{
+		return &sectionHeaders;
 	}
 };
 

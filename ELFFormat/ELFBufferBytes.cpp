@@ -24,23 +24,22 @@ public:
 
 	template<typename Type>	void read_64bit(Type& value)
 	{
-		value = swap_64bit(*reinterpret_cast<const Type*>(_buffer + _offset));
+		value = *reinterpret_cast<const Type*>(_buffer + _offset);
 		_offset += 8;
 	}
 	template<typename Type>	void read_32bit(Type& value)
 	{
-		value = swap_32bit(*reinterpret_cast<const Type*>(_buffer + _offset));
+		value = *reinterpret_cast<const Type*>(_buffer + _offset);
 		_offset += 4;
 	}
 	template<typename Type>	void read_16bit(Type& value)
 	{
-		auto val = *reinterpret_cast<const Type*>(_buffer + _offset);
-		value = swap_16bit(val);
+		value = *reinterpret_cast<const Type*>(_buffer + _offset);
 		_offset += 2;
 	}
 	template<typename Type>	void read_8bit(Type& value)
 	{
-		value = swap_8bit(*reinterpret_cast<const Type*>(_buffer + _offset));
+		value = *reinterpret_cast<const Type*>(_buffer + _offset);
 		_offset += 1;
 	}
 

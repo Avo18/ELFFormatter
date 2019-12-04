@@ -34,7 +34,7 @@ struct ELFStructur
 	//uint32_t _flag; 
 };
 
-struct ELFSectionHeader
+struct ELFProgramHeader
 {
 	uint32_t _type;
 	uint32_t _offset;
@@ -44,6 +44,20 @@ struct ELFSectionHeader
 	uint32_t _memsz;
 	uint32_t _flags;
 	uint32_t _align;
+};
+
+struct ELFSectionHeader
+{
+	uint32_t _name;
+	uint32_t _type;
+	uint32_t _flags;
+	uint32_t _addr;
+	uint32_t _offset;
+	uint32_t _size;
+	uint32_t _link;
+	uint32_t _info;
+	uint32_t _addrAlign;
+	uint32_t _entSize;
 };
 
 enum InstructionArchitect

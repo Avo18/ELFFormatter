@@ -21,7 +21,7 @@ void printELFHeader(ELFStructur& header)
 
 std::vector<char> readFile()
 {
-	auto file = std::ifstream{ L"C:\\Users\\vanst\\Downloads\\helloworld\\hello", std::ifstream::binary };
+	auto file = std::ifstream{ L"C:\\Users\\vanst\\Downloads\\helloworld\\chello", std::ifstream::binary };
 	auto buffer = std::vector<char>{};
 	//check insteken! 
 
@@ -44,6 +44,7 @@ int main()
 	ELFReader reader = ELFReader();
 	reader.readELFHeader(in);
 	reader.readELFProgramHeader(in);
+	reader.readELFSectionHeader(in);
 
 	std::getchar();
 	return 0; // success return
