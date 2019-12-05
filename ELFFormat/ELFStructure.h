@@ -60,6 +60,27 @@ struct ELFSectionHeader
 	uint32_t _entSize;
 };
 
+struct ELFLoadDirectives
+{
+	uint32_t _tag;
+	uint32_t _val;
+};
+
+enum ProgramHeaderTypes
+{
+	_NULL = 0x00,
+	LOAD = 0x01,
+	DYNAMIC = 0x02,
+	INTERP = 0x03,
+	NOTE = 0x04,
+	SHLIB = 0x05, 
+	PHDR = 0x06,
+	LOOS = 0x60000000
+	/*
+	... check wikipedia for more types.
+	*/
+};
+
 enum InstructionArchitect
 {
 	NONE = 0x00,

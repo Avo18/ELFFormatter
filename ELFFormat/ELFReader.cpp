@@ -4,6 +4,10 @@
 #include <vector>
 #include "Loader.cpp"
 #include "ELFBufferBytes.cpp"
+#include "ELFStructure.h"
+#include <algorithm>
+#include "VectorSearch.h"
+#include "LambdaProgramHeader.h"
 
 class ELFReader
 {
@@ -11,6 +15,8 @@ private:
 	ELFStructur header;
 	std::vector<ELFProgramHeader> programHeader = {};
 	std::vector<ELFSectionHeader> sectionHeaders = {};
+	std::vector<ELFLoadDirectives> loadDirectives = {};
+
 public:
 
 	void readELFHeader(ELFBufferBytes& byteReader)
@@ -32,6 +38,15 @@ public:
 		Loader::fillSectionHeader(byteReader, sectionHeaders);
 	}
 
+	void readELFLoadDirectives(ELFBufferBytes& byteReader)
+	{
+		ELFProgramHeader* dynamicPH = findInVector(programHeader, LambdaPH_Type(ProgramHeaderTypes::DYNAMIC));
+		if (dynamicPH == NULL) return;
+		loadDirectives.resize(dynamicPH->_filesz / sizeof(struct ELFLoadDirectives));
+		byteReader.setPosition(dynamicPH->_offset);
+		Loader::fillLoadDirectives(byteReader, loadDirectives);
+	}
+
 	ELFStructur* getHeader()
 	{
 		return &header;
@@ -43,6 +58,10 @@ public:
 	std::vector<ELFSectionHeader>* getSectionHeader()
 	{
 		return &sectionHeaders;
+	}
+	std::vector<ELFLoadDirectives>* getLoadDirectives()
+	{
+		return &loadDirectives;
 	}
 };
 

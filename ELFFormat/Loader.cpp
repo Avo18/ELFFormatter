@@ -64,6 +64,16 @@ public:
 			byteReader.read_32bit(sectionHeader[i]._entSize);
 		}
 	}
+
+	static void fillLoadDirectives(ELFBufferBytes& byteReader, std::vector<ELFLoadDirectives>& loadDirectives)
+	{
+		for (int i = 0; i < loadDirectives.size(); i++)
+		{
+			loadDirectives[i] = ELFLoadDirectives();
+			byteReader.read_32bit(loadDirectives[i]._tag);
+			byteReader.read_32bit(loadDirectives[i]._val);
+		}
+	}
 };
 
 #endif

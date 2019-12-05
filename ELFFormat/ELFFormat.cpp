@@ -45,6 +45,7 @@ int main()
 	reader.readELFHeader(in);
 	reader.readELFProgramHeader(in);
 	reader.readELFSectionHeader(in);
+	reader.readELFLoadDirectives(in);
 
 	std::getchar();
 	return 0; // success return

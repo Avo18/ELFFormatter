@@ -160,6 +160,8 @@
   <ItemGroup>
     <ClInclude Include="ELFStructure.h" />
     <ClInclude Include="ELFView.h" />
+    <ClInclude Include="LambdaProgramHeader.h" />
+    <ClInclude Include="VectorSearch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Downloads\helloworld\chello" />

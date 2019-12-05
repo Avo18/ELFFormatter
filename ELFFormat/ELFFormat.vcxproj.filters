@@ -16,6 +16,9 @@
     <Filter Include="TestELF">
       <UniqueIdentifier>{31db1dfa-0fa5-406e-b622-4721aab04288}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Lambda">
+      <UniqueIdentifier>{a3057b0d-5bb4-4e93-8a8a-0a910acb665f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ELFFormat.cpp">
@@ -40,6 +43,12 @@
     </ClInclude>
     <ClInclude Include="ELFStructure.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LambdaProgramHeader.h">
+      <Filter>Header Files\Lambda</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
