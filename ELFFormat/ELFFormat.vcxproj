@@ -75,6 +75,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <ExecutablePath>C:\Users\vanst\Downloads\mman-win32-master\mman-win32-master;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -106,6 +108,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\vanst\Downloads\mman-win32-master\mman-win32-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,13 +161,14 @@
     <ClCompile Include="ELFReader.cpp" />
     <ClCompile Include="Endian_Swap.cpp" />
     <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="X86OpcodeTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ELFStructure.h" />
-    <ClInclude Include="ELFView.h" />
     <ClInclude Include="Enumerations.h" />
     <ClInclude Include="LambdaProgramHeader.h" />
     <ClInclude Include="VectorSearch.h" />
+    <ClInclude Include="X86Opcode.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Downloads\helloworld\chello" />

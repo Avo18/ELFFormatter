@@ -1,7 +1,6 @@
 #ifndef CLASS_ELFBufferBytes
 #define CLASS_ELFBufferBytes
 
-#include "ELFView.h"
 #include <cstdint>
 #include <cstdlib>
 #include <stdio.h>

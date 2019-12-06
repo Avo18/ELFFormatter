@@ -4,11 +4,21 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "ELFView.h"
 #include "ELFStructure.h"
 #include "Loader.cpp"
 #include "ELFBufferBytes.cpp"
 #include "ELFReader.cpp"
+#include <mman.c>
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+#include <string.h>
+
+//#include <stdio.h>
+//#include <string.h>
+//#include <sys/mman.h>
+//#include <unistd.h>
 
 void printELFHeader(ELFStructur& header)
 {
@@ -46,6 +56,10 @@ int main()
 	reader.readELFProgramHeader(in);
 	reader.readELFSectionHeader(in);
 	reader.readELFLoadDirectives(in);
+
+	// test ASM reading
+	// offset 0x274   
+	// size 0x30
 
 	std::getchar();
 	return 0; // success return

@@ -36,11 +36,11 @@
     <ClCompile Include="Endian_Swap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="X86OpcodeTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ELFView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ELFStructure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -51,6 +51,9 @@
       <Filter>Header Files\Lambda</Filter>
     </ClInclude>
     <ClInclude Include="Enumerations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="X86Opcode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,8 +2,6 @@
 #define CLASS_LOADER
 
 #include "ELFStructure.h"
-#include "ELFView.h"
-#include "Loader.h"
 #include "ELFBufferBytes.cpp"
 #include <vector>
 
