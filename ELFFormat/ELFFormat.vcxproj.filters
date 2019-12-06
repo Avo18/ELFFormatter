@@ -50,6 +50,9 @@
     <ClInclude Include="LambdaProgramHeader.h">
       <Filter>Header Files\Lambda</Filter>
     </ClInclude>
+    <ClInclude Include="Enumerations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Downloads\helloworld\chello">

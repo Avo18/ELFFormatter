@@ -40,7 +40,7 @@ public:
 
 	void readELFLoadDirectives(ELFBufferBytes& byteReader)
 	{
-		ELFProgramHeader* dynamicPH = findInVector(programHeader, LambdaPH_Type(ProgramHeaderTypes::DYNAMIC));
+		ELFProgramHeader* dynamicPH = findInVector(programHeader, LambdaPH_Type(ProgramHeader::DYNAMIC));
 		if (dynamicPH == NULL) return;
 		loadDirectives.resize(dynamicPH->_filesz / sizeof(struct ELFLoadDirectives));
 		byteReader.setPosition(dynamicPH->_offset);
